@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleform.css">
+    <title>APPLICATION FORM</title>
+</head>
+<body style="background-color: #efefaedd;">
+  <aside id="sidebar">
+    <form action="action.php" class="quote" id="dark">
+        <fieldset>
+            <legend id="leg">Student's Application Form</legend>
+            <div>
+                <label>FIRST NAME</label><br>
+                <input type="text" placeholder="First Name" name="firstname">
+            </div>
+            <div>
+                <label>SURNAME</label><br>
+                <input type="text" placeholder="Surname" name="surname">
+            </div>
+            <div>
+                <label>MIDDLE NAME</label><br>
+                <input type="text" placeholder="Middle Name" name="middlename">
+            </div>
+            <div>
+                <label>Email</label><br>
+                <input type="email" placeholder="example123@gmail.com" name="emailadd">
+            </div>
+            <div>
+                <label>Phone Number</label><br>
+                <input type="text" placeholder="+2348031133441" name="phoneno" maxlength="14" minlength="14">
+            </div>
+            <div>
+                <label>GENDER:</label>
+                <select name="gender" id="sex">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label>Create A Password</label><br>
+                <input type="password" placeholder="............" name="password" required="required" maxlength="16" minlength="8"><br>
+                <label>Re-enter created password</label><br>
+                <input type="password" placeholder="............" name="repassword"  required="required" maxlength="16" minlength="8">
+            </div>
+        </fieldset>
+        <button class="button1" type="submit">Submit</button>
+    </form>
+  </aside>
+
+  <script src="formalization.js"></script>
+</body>
+</html>
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        let valid = true;
+        const inputs = form.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            const label = input.previousElementSibling.textContent.trim();
+            if (input.value === '') {
+                input.style.border = '1px solid red';
+                valid = false;
+            } else {
+                input.style.border = '';
+            }
+            if (input.type === 'email' && !validateEmail(input.value)) {
+                alert(`${label} must be in the correct format`);
+                valid = false;
+            }
+        });
+        if (valid) {
+            alert('Form submitted successfully');
+            form.reset();
+        } else {
+            alert('Please fill out all required fields');
+        }
+    });
+
+    function validateEmail(email) {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+</script>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+/* Sidebar */
+#sidebar {
+  margin: 50px auto;
+  width: 500px;
+  background: #f2f2f2;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Form */
+.quote {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Legend */
+#leg {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Label */
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Input fields */
+input[type="text"], input[type="email"], input[type="password"], select {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+/* Button */
+.button1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button1:hover {
+  background-color: #45a049;
+}
+
+/* Error message */
+.error {
+  color: red;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+/* Highlight empty field */
+input:invalid {
+  border: 2px solid red;
+}
+
+/* Remove red border when user starts typing */
+input:focus:invalid {
+  border: 2px solid #f9f9f9;
+}
+
+/* Success message */
+.success {
+  color: green;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+    </style>

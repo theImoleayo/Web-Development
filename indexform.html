@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body style="background-color: #afdaaf;">
+    <forms style="background-color: black;">
+        <p>I will create a form for collecting user's data</p>
+        <p>Username:<input type="text" name="username"  maxlength="12"/></p>
+            <p>Password:<input type="password" name="password"  maxlength="12"/></p>
+              <p>I will like to know your thoughts about the look and creation of this forms</p>
+            <textarea name="comments" col="4" row="3">Enter your comment here...</textarea>
+            
+            <p>Please select your favorite genre: <br/> <input type="radio" name="genre" value="rock" checked="checked"/> Rock
+            <br/> 
+            <input type="radio" name="genre" value="pop"/> Pop
+            <br/> 
+            <input type="radio" name="genre" value="jazz"/> Jazz </p>
+            <input type="checkbox"/>
+            <hr/>
+            <br/>
+            <p>Please select your favorite music service(s): <br /> <input type="checkbox" name="service" value="itunes" checked="checked" /> iTunes <input type="checkbox" name="service" value="lastfm" /> Last.fm <input type="checkbox" name="service" value="spotify" /> Spotify </p>
+            <hr/>
+              <p>What device do you listen to music on?</p>                                                  
+              <select name="devices">
+                  
+                      <option value="ipod">iPod</option>
+                      <option value="radio">Radio</option>
+                       <option value="computer" selected="selected">Computer</option>  
+                      </select>
+         
+             <p>What kind of songs do you listen to?</p>
+             
+              <select name="kinds">
+                  
+                 <option value="christian">Christian Songs</option>
+                  <option value="iLife">iLife Songs</option>
+                 </select>
+    </forms>
+    
+    </---This is a Multiple Selection Box--->
+    <form> <p>Do you play any of the following instruments? (You can select more than one option by holding down control on a PC or command key on a Mac while selecting different options.)</p> 
+    <select name="instruments" size="3" multiple="multiple">
+         <option value="guitar" selected="selected"> Guitar</option>
+          <option value="drums">Drums</option>
+          
+           <option value="keyboard" selected="selected">Keyboard</option>
+            <option value="bass">Bass</option> </select> </form>
+</body>
+</html>
+    <style>
+     body  {
+     font-family: Roboto;
+       font-size: 1.5em; 
+       font-weight: 100;    
+        }
+        </style>
