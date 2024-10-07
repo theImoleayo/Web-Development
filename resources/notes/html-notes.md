@@ -50,10 +50,8 @@ Self-Closing Tags: <audio>, <video>, <input>
 Empty Elements: <br>, <hr>
 ```
 
-
 ## Resources
 
 This repository includes materials for learning HTML. You can access a comprehensive HTML course video series, covering topics from beginner to advanced, at the following link:
 
 [HTML Course Video Series](https://mega.nz/folder/lxhERBZL#WPhYniXuRPwRS29_M0ygJQ)
-
