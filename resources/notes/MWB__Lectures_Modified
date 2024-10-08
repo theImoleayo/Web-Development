@@ -1,0 +1,306 @@
+Date: 20/09/2024
+11pm / Yasharth Shekhar
+JavaScript is a combination of the following programming paradigms
+Topic : Document Object Model - DOM
+POP - Procedural Oriented Programming
+Functional Programming 
+Object-Oriented Programming
+Functions
+~Function Declarations
+Functions Expressions enable JavaScript a very powerful programming language.
+Function Expressions are NOT hoisted
+The following are types of function expressions
+Anonymous : These are nammeless functions which are not given any identifier 
+        
+
+        
+        
+
+
+
+
+IIFE - Immediately Invoked Functions Expressions : These allowed a function to be executed immediately.
+        You do not want the variables declared inside the functions to be part of the Global Environment.
+        {
+                let message = "Hello, World";
+                function displayMessage(){
+                console.log(message);
+                }
+                displayMessage();
+        }()
+        //This could have be an anonymous function but it has been 
+        //invoked immediately.
+        
+        This will be away from your Global Scope Context
+        This is a very good example of Encapsulation
+        This also promotes some sort of privacy
+        The variable inside them cannot be access outside the function 
+        scope
+Callback Functions
+Arrow Functions:
+        This was introduced in 2015, along with other concepts that were i
+        introduced in the language.
+        2015 => ES6 - EMMAScript
+        It makes your function concised
+        They have a Lexically-Bound Context
+        (This keyword either in implicit bound or explicit bound)
+        
+        const double = (number)=>number*2;
+        //      name    parameter      statement
+        console.log(double(3)); //-> 6
+        -----------------------------
+        const greet = name => `Hello, ${name}`;
+        console.log(greet("John")); //-> Hello, John
+        
+Callback Functions:
+        This enables passing a function as an argument into another
+        function. Not Parameter
+        
+        function greet(name, callback){
+        const message = "Hello, " + name + " !";
+        callback(message);
+        }
+        function displayMessage(message){
+        console.log(message);
+        }
+        greet("Santushti", displayMessage);
+        
+        A function you passed as a parameter is the callback function, 
+        not the 
+        
+CURRYING
+        function multiply(a,b){
+        return a*b;
+        }
+        
+        //arrow function is used instead above function declaration
+        
+        function currymul(a)
+        {
+        return function(b)
+        {
+        return multiply(a,b);
+        }
+        }
+        const multiplytwo = currymul(2);
+        console.log(multiplytwo(5));
+        
+------------------------------------------------
+Date: 23/09/2024
+11pm / Yasharth Shekhar
+
+Topic : DOM Manipulation
+->Advance Functions
+->Objects
+->Class
+Review : Functions are first-class citizens in JavaScript and this makes 
+        it famous.
+HIGHER ORDER FUNTIONS
+        This accepts other functions as argument(s). IT either 
+        Accepts call-back functions 
+        OR : AND 
+        Returns a function
+Future Topics : Async JS, DOM, NodeJS, ReactJS
+ HOF : MAP Function.
+        The First HOF will be treating is map(), it operates on array in 
+        JS,
+        "
+        name = ["Alice", "BOB", "Chaarlie", "Dave"];
+        name.length = [5, 3, 7, 4]
+        "
+        
+        ```
+        const names = ["Alice", "Bob","Charlie", "Dave"]
+        const namesLengths = names.map(function(name))
+        
+        {
+        return name.length;
+        
+        });
+        
+        console.log(nameLengths):
+        
+        ```
+        
+filter():
+
+        Another HOF is filter()
+        
+        
+        ```
+        fruits = [ "Apple",  "", "", "", ""]
+        
+        output = ["Banana", "Orange"];
+        
+reduce(): 
+        Accumulation and returns current element.
+        
+        ```
+        numbers = [1,2,3,4,5];
+        
+        const numbersLengths = names.reduce(function(accumulator, 
+        currentValue)
+        {
+        return accumulator*currentValue;
+        });
+        console.log(nameLengths);
+        ```
+        
+find(): 
+        returns the first element 
+                ```
+        numbers = [1,2,3,4,5];
+        
+        const numbersLengths = numbers.find(function(number)
+        {
+        return number > 3;
+        });
+        console.log(nameLengths);
+        ```
+        
+findIndex():
+        This returns the index of the first element in the array.
+        
+                ```
+        numbers = [1,2,3,4,5];
+        
+        const numbersLengths =numbers.findIndex(function(number)
+        {
+        return number;
+        });
+        console.log(nameLengths);
+        ```
+ 
+NOTS : String Manipulation
+        
+every(): 
+        This makes sure all the elements in the array satifies a 
+        condition and a BOOLEAN is returned.
+        
+        ```
+        numbers = [1,2,3,4,5];
+        
+        const numbersLengths = numbers.every(function(number)
+        {
+        return number%2===0;
+        });
+        console.log(nameLengths);
+        ```
+        
+fill(), findLast(), findLastIndex()
+
+
+NEXT TOPIC : Advanced OBJECTS, Regex and Completion of the above Higher Order Functions.
+Then we will be discussing the most important topic which is DOM Manipulation and Async 
+
+
+
+
+-------------------------------------------
+Date: 24/09/2024
+11pm / Yasharth Shekhar
+
+Topic : Review from the previous discussions.
+Review : Higher Order Functions
+
+fill() : 
+        
+         
+        ```
+        const numbers = [1,2,3,4,5];
+        
+        numbers.fill(0, 2, 4);
+        
+        console.log(numbers);
+        
+       
+        ```
+        
+findLast() && findLastIndex() : 
+        ```
+        
+        const numbers = [10,20,30,40,50];
+        const nameLengths = numbers.findLast(function(name)
+        {
+        return name>30;
+        });
+        
+        ```
+        
+         ```
+        
+        const numbers = [10,20,30,40,50];
+        const nameLengths = numbers.findLastIndex(function(name)
+        {
+        return name>30;
+        });
+        
+        ```
+        
+forEach() : 
+        pick each element of the array and perform a task/action/function
+        ```
+        const numbers = [1,2,3,4,5];
+        numbers.forEach(function(name)
+        {
+        name * 2;
+        
+        });
+        console.log(numbeers);
+        ```
+Advanced JS
+
+'this' keyword : 
+        it refers to the object that is currently being executed in the 
+        code.
+        
+NOTES : we have primitives datatypes like numbers, etc. OBJECTS are non-primitive datatypes. Objects consist of key:value pair. And the key is a MUST 'string' datatype while the values can be in any of the forementioned primitive datatypes.
+
+        ```
+        const person = {
+        name : "John",
+        age : 25,
+        greet : function()
+        {
+        console.log{`Hello, my name is ${this.name} and I'm ${this.age}
+        years old.`);
+        }
+        };
+        person.greet();
+        
+Revision : Currying
+        ```
+
+        
+Further Studies : 
+        OOP in JavaScript 
+        Class 
+        Object
+        
+------------------------------------------------
+Date: 25/09/2024
+11pm / Yasharth Shekhar
+
+Revise : Objects which are key:value pair which can be combination for 
+        the following primitives datatype.
+        numbers
+        strings
+        null 
+        bigInt
+        booleans
+        undefined
+        symbol
+Note: Information is usually sent in form of objects in JS, and it is 
+        usually in the JSON which stands for the JavaScript Object
+        Notation which is a key:value pair and the key is strictly 
+        string datatype and the value can fall in any of the groups in 
+        JS.{ACID, CRUD, Normalization} 
+
+
+------------------------------------------------
+Date: 27/09/2024
+11pm / Yasharth Shekhar``
+Topic : Constructor & Class 
+Blueprint of Human, a class human with the following properties or attributes.
+
+human{face, body, 
