@@ -1,0 +1,81 @@
+Date: 20/09/2024
+11pm / Yasharth Shekhar
+JavaScript is a combination of the following programming paradigms
+Topic : Document Object Model - DOM
+POP - Procedural Oriented Programming
+Functional Programming 
+Object-Oriented Programming
+Functions
+~Function Declarations
+Functions Expressions enable JavaScript a very powerful programming language.
+Function Expressions are NOT hoisted
+The following are types of function expressions
+Anonymous : These are nammeless functions which are not given any identifier 
+        
+
+
+IIFE - Immediately Invoked Functions Expressions : These allowed a function to be executed immediately.
+        You do not want the variables declared inside the functions to be part of the Global Environment.
+        {
+                let message = "Hello, World";
+                function displayMessage(){
+                console.log(message);
+                }
+                displayMessage();
+        }()
+        //This could have be an anonymous function but it has been 
+        //invoked immediately.
+        
+        This will be away from your Global Scope Context
+        This is a very good example of Encapsulation
+        This also promotes some sort of privacy
+        The variable inside them cannot be access outside the function 
+        scope
+Callback Functions
+Arrow Functions:
+        This was introduced in 2015, along with other concepts that were i
+        introduced in the language.
+        2015 => ES6 - EScript
+        It makes your function concised
+        They have a Lexically-Bound Context
+        (This keyword either in implicit bound or explicit bound)
+        
+        const double = (number)=>number*2;
+        //      name    parameter      statement
+        console.log(double(3)); //-> 6
+        -----------------------------
+        const greet = name => `Hello, ${name}`;
+        console.log(greet("John")); //-> Hello, John
+        
+Callback Functions:
+        This enables passing a function as an argument into another
+        function. Not Parameter
+        
+        function greet(name, callback){
+        const message = "Hello, " + name + " !";
+        callback(message);
+        }
+        function displayMessage(message){
+        console.log(message);
+        }
+        greet("Santushti", displayMessage);
+        
+        A function you passed as a parameter is the callback function, 
+        not the 
+        
+CURRYING
+        function multiply(a,b){
+        return a*b;
+        }
+        
+        //arrow function is used instead above function declaration
+        
+        function currymul(a)
+        {
+        return function(b)
+        {
+        return multiply(a,b);
+        }
+        }
+        const multiplytwo = currymul(2);
+        console.log(multiplytwo(5));
