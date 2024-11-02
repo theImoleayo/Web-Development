@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome November</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin: 0.5em 0;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 0.5em 0;
+        }
+        .spotify-embed {
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Message -->
+    <h1 id="welcome-heading">Hello! Welcome to November!</h1>
+    <p id="reminder">Don't forget to code every day this month. Let's make it a month of growth and learning!</p>
+
+    <!-- Spotify Embed for a November Song -->
+    <div class="spotify-embed">
+        <iframe 
+            src="https://open.spotify.com/embed/track/4NtfmGeS6yNfDG7GXZu1n2?utm_source=generator" 
+            width="300" 
+            height="80" 
+            frameborder="0" 
+            allowtransparency="true" 
+            allow="encrypted-media">
+        </iframe>
+    </div>
+
+    <script>
+        // Check if it's November and show a personalized message
+        const currentMonth = new Date().getMonth(); // November is 10 in 0-indexed months
+
+        if (currentMonth === 10) {
+            document.getElementById("welcome-heading").innerText = "Welcome to November, the month of challenges!";
+        } else {
+            document.getElementById("welcome-heading").innerText = "Welcome!";
+            document.getElementById("reminder").innerText = "Keep coding daily!";
+        }
+    </script>
+</body>
+</html>
